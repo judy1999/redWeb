@@ -34,9 +34,9 @@
             break;
         }
     ?>
-        <table style="width:800px;border:1px solid #333;">
+        <table style="width:550px;border:1px solid #333;">
             <tr style="height:30px;">
-                <td colspan="2">標題：<?php echo $row['m_title']?></td>
+                <td colspan="2">序號:<?php echo $n;?><br>標題：<?php echo $row['m_title']?></td>
             </tr>
             <tr style="height:30px;">
                 <td>留言時間：<?php echo $row['m_time'];?></td>
@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <td colspan="2">留言內容：<br>
-                <span  style="font-size:20px;"><?php echo $row['m_content'];?></span></td>
+                <pre  style="font-size:20px;"><?php echo $row['m_content'];?></pre></td>
             </tr>
         </table>
     <?php } ?>
