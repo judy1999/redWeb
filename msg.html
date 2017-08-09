@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>Document</title>
+	<style>
+		body {
+			background: #f6e4d6;
+		}
+
+		@keyframes init {
+			0% {
+				transform: rotate(-180deg)
+			}
+			100% {
+				transform: rotate(-360deg)
+			}
+		}
+
+		.init {
+			animation: 1s init;
+		}
+
+		#bgd {
+			height: 800px;
+			width: 650px;
+		}
+
+		#Label {
+			background: #f5e3a5;
+			border-radius: 12px;
+			padding: 5px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: 800;
+			color: #897009;
+			position: relative;
+		}
+
+		#Label:hover {
+			border-radius: 15px;
+			padding: 7px;
+			font-size: 25px;
+		}
+
+		#titleInput {
+			width: 90%;
+			height: 25px;
+			font-size: 20px;
+		}
+
+		.inputDiv {
+			text-align: Center;
+			padding-top: 10px;
+		}
+
+		.bt1 {
+			position: absolute;
+			width: 125px;
+			height: 30px;
+			left: 100px;
+			top: 7px;
+			background: orange;
+			border: 0;
+			border-radius: 12px;
+			box-shadow: 3px 5px 7px #f6e4d6;
+			color: white;
+		}
+
+
+		.bt2 {
+			position: absolute;
+			width: 125px;
+			height: 30px;
+			right: 100px;
+			top: 7px;
+			background: orange;
+			border: 0;
+			border-radius: 12px;
+			box-shadow: 3px 5px 7px #f6e4d6;
+			color: white;
+		}
+
+		.bt:hover {
+			cursor: pointer;
+			border-radius: 15px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="bgd">
+		<form action="msgProcess.php" method="post">
+			<div id="title">
+				<div id="Label">標題(Title):</div>
+				<div class="inputDiv">
+					<input style="display: none;" id="titleInput" type="text" name="title" maxlength="20" required placeholder="最多輸入20字元">
+				</div>
+			</div>
+			<div id="msg" style="padding-top:5px;">
+				<div id="Label" style="display: none;">內容:</div>
+				<div class="inputDiv">
+					<textarea rows="20" style="width:90%;font-size:20px;display:none;" placeholder="請輸入內容" name="msg" required></textarea>
+				</div>
+			</div>
+			<div style="display: none;height:38px;" id="Label">
+				<button style="display:none;" class="bt1 bt" type="submit">送出留言</button>
+				<button style="display:none;" class="bt2 bt" type="reset">重新填寫</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
+<script>
+	function init1() {
+		$("#titleInput").fadeIn();
+		init2();
+	}
+
+	function init2() {
+		$("#msg #Label").fadeIn();
+		$("#msg #Label").addClass("init");
+		setTimeout(init3, 1000);
+	}
+
+	function init3() {
+		$(".inputDiv textarea").fadeIn();
+		setTimeout(init4, 100);
+	}
+
+	function init4() {
+		$("#bgd form #Label").fadeIn();
+		setTimeout(init5, 800);
+	}
+
+	function init5() {
+		$("#bgd form #Label .bt1").fadeIn();
+		setTimeout(init6, 250);
+	}
+
+	function init6() {
+		$("#bgd form #Label>.bt2").fadeIn();
+
+	}
+	$("#title #Label").addClass("init");
+	setTimeout(init1, 1000);
+</script>
