@@ -1,11 +1,11 @@
 <script>
     function success(){
         alert("傳送成功!");
-        location.href="index.html";
+        window.open('main.html','main');
     }
     function error(){
         alert("你在今天已經傳送超過5次!!");
-        location.href="index.html";
+        window.open('main.html','main');
     }
 </script>
 <?php

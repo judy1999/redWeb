@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件</title>
+<title>查看留言</title>
 <style type="text/css">
 #all{
 	position:relative;
@@ -71,7 +71,6 @@ iframe{
 	margin:0 0px;	
 }
 #View{
-	background-color:#F96;
 	width:600px;
 	height:500px;
 	position:absolute;
@@ -82,44 +81,15 @@ iframe{
 
 <body id="body">
 <div id="all">
-  <div id="b"><img src="images/b.png" width="324" height="616" border="0" /></div><div id="View"><?php
+  <div id="b"><img src="images/b.png" width="324" height="616" border="0" /></div>
+  <iframe src="msgView.php" name="main" width="700" height="500" frameborder="0"></iframe>
+  <div id="View"><?php
     $db=new PDO("mysql:host=1.34.6.160;port=3306;dbname=redWeb","redWeb","h6g04bp6jp6");
     $db->exec("set names utf8");
     $result=$db->prepare("select * from msg order by m_time desc");
 	$result->execute();
 ?>
-    <div style="color:red;">
-        *最多顯示20筆內容!!
-    </div>
-    <?php
-    $n=0;
-    $index=0;
-    while($row = $result->fetch(PDO::FETCH_ASSOC)){ 
-        $n+=1;
-        $index=$row['m_id'];
-        if ($n>20){
-            break;
-        }
-    ?>
-        <table style="width:800px;border:1px solid #333;">
-            <tr style="height:30px;">
-                <td colspan="2">標題：<?php echo $row['m_title']?></td>
-            </tr>
-            <tr style="height:30px;">
-                <td>留言時間：<?php echo $row['m_time'];?></td>
-                <td>留言IP：<?php echo $row['m_ip'];?></td>
-            </tr>
-            <tr>
-                <td colspan="2">留言內容：<br>
-                <span  style="font-size:20px;"><?php echo $row['m_content'];?></span></td>
-            </tr>
-        </table>
-    <?php } ?>
-    <?php
-        $delete = $db -> prepare("delete from msg where m_id>=:index");
-        $delete->bindValue('index',$index+25);
-        $delete->execute();
-    ?></div></iframe>
+   </div>
   <div id="title"><img src="images/title.png" width="508" height="177" /></div>
   <div id="b1"><a href="index.html"><img src="images/backhmoe.png" width="114" height="307" /></a></div>
 </div>
