@@ -37,11 +37,11 @@ iframe{
 }
 #b1{
 	position: absolute;
-	width: 106px;
-	height: 38px;
+	width: 105px;
+	height: 286px;
 	z-index: 1;
-	left: 107px;
-	top: 330px;
+	left: 123px;
+	top: 309px;
 }
 #b2{
 	position: absolute;
@@ -121,11 +121,7 @@ iframe{
         $delete->execute();
     ?></div></iframe>
   <div id="title"><img src="images/title.png" width="508" height="177" /></div>
-  <div id="b1"><a href="index.php"><img src="images/home.png" width="100" height="35" /></a></div>
-  <div id="b2"><a href="word.html"><img src="images/about.png" width="148" height="35" /></a></div>
-  <div id="b3"><a href="msg.html"><img src="images/msg.png" width="148" height="35" /></a></div>
-  <div id="b4"><a href="lookMsg.php" target="_parent"><img src="images/lookmsg.png" width="148" height="35" border="0" /></a></div>
-  
+  <div id="b1"><a href="index.html"><img src="images/backhmoe.png" width="114" height="307" /></a></div>
 </div>
 </body>
 </html>
