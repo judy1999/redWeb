@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>查看留言</title>
+<link rel="icon" href="images/le12345.gif">
 <style type="text/css">
 #all{
 	position:relative;
